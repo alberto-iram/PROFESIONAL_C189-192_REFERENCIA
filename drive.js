@@ -14,10 +14,10 @@ AFRAME.registerComponent('drive', {
         var multiply = 10;
         var wheelRotation = 0;
 
-        //Key Down Events
+        //Eventos Key Down
         window.addEventListener('keydown', function (e) {
 
-            //Steering Wheel Rotatation  on Right & Left Arrow Keyup
+            //Rotación del volante al presionar las flechas derecha e izquierda
             var wheel = document.querySelector("#control-wheel")
 
             if (e.code == "ArrowRight" && wheelRotation > -40) {                
@@ -30,7 +30,7 @@ AFRAME.registerComponent('drive', {
                 wheel.setAttribute("rotation", { x: 0, y: 0, z: wheelRotation })
             }
             
-            //Camera Movement Control: Rotation & Direction on Right & Left Arrow Keyup
+            //Control del movimiento de la cámara: rotación y dirección con las flechas derecha e izuqierda
             var cameraRig = document.querySelector("#camera-rig")
             var cameraRotation = cameraRig.getAttribute("rotation")
             var cameraPosition = cameraRig.getAttribute("position")
@@ -57,7 +57,7 @@ AFRAME.registerComponent('drive', {
 
             }
 
-            //Speed Up/Accelerate on Up Arrow Keyup
+            //Aumentar la velocidad/acelerar con la flecha hacia arriba
             if (e.code == "ArrowUp") {
                 multiply += 0.5
 
@@ -70,7 +70,7 @@ AFRAME.registerComponent('drive', {
                 }
 
             }
-            //Stop/break on Space Keydown
+            //Parar/frenar con la tecla de espacio
             if (e.code == "Space") {            
                 cameraRig.setAttribute("movement-controls", {"speed": 0})
                 var stopCar = document.querySelector("#control-break")
@@ -79,7 +79,7 @@ AFRAME.registerComponent('drive', {
 
         })
 
-        //Key Up Events
+        //Eventos Key Up
         window.addEventListener('keyup', function (e) {
             var cameraRig = document.querySelector("#camera-rig")
             var cameraDirection = new THREE.Vector3();
