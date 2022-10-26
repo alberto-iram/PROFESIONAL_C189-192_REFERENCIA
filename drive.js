@@ -30,7 +30,7 @@ AFRAME.registerComponent('drive', {
                 wheel.setAttribute("rotation", { x: 0, y: 0, z: wheelRotation })
             }
             
-            //Control del movimiento de la cámara: rotación y dirección con las flechas derecha e izuqierda
+            //Control del movimiento de la cámara: rotación y dirección con las flechas derecha e izquierda
             var cameraRig = document.querySelector("#camera-rig")
             var cameraRotation = cameraRig.getAttribute("rotation")
             var cameraPosition = cameraRig.getAttribute("position")
